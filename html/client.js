@@ -27,3 +27,13 @@ fetch('/api/counter')
 }
 
 reloadCounter ()
+setInterval(reloadCounter, 2000)
+
+function postCounter () {
+	fetch('/api/counter', {method: 'POST'})
+	.then(reloadCounter)
+}
+
+document
+	.querySelector('#count-button')
+	.addEventListener('click', postCounter)

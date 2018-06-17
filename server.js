@@ -17,4 +17,9 @@ server.get('/api/counter', function (request,response) {
 	})
 })
 
+server.post('/api/counter', function (request,response) {
+	count++
+	response.send()
+})
+
 server.listen(3000)
