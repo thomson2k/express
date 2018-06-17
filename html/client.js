@@ -11,6 +11,16 @@ fetch('/api/time')
 			.innerHTML = data.time
 	})
 }
-
+function reloadTime () {
+fetch('/api/time')
+	.then( function (response) {
+		return response.json()
+	})
+	.then(function (data) {
+		document
+			.querySelector("#time")
+			.innerHTML = data.time
+	})
+}
 
 reloadTime ()
