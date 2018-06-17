@@ -3,29 +3,13 @@ const server = express()
 
 
 server.use(express.static('html'))
-//server.get('/', function (request,response) {
-//	console.log('request form',request.connection.remoteAdress,)
-//		
-//	fs.readFile('index.html',funt)
-//
-//	response.send(`
-//		<html>
-//			<head>
-//				<title> Page </title>
-//			
-//			</head>
-//
-//			<body>
-//			<style>	
-//				body {
-//					color:pink;
-//					font-size: 4vh;
-//				}
-//			</style>
-//				helo
-//			</body>
-//		</html>
-//			`)
-//})
+
+server.get('/api/time', function (request,response) {
+	console.log("time requested")
+
+	response.send({
+		time: new Date()
+	})
+})
 
 server.listen(3000)
