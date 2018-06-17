@@ -11,16 +11,19 @@ fetch('/api/time')
 			.innerHTML = data.time
 	})
 }
-function reloadTime () {
-fetch('/api/time')
+
+reloadTime()
+
+function reloadCounter () {
+fetch('/api/counter')
 	.then( function (response) {
 		return response.json()
 	})
 	.then(function (data) {
 		document
-			.querySelector("#time")
-			.innerHTML = data.time
+			.querySelector("#counter")
+			.innerHTML = data.count
 	})
 }
 
-reloadTime ()
+reloadCounter ()
